@@ -6,7 +6,7 @@ package telas;
 
 import apoio.Formatacao;
 import apoio.Validacao;
-import dao.ClienteDAO;
+import dao.TemaGenericoDAO;
 import entidades.TemaGenerico;
 import java.awt.Color;
 import javax.swing.JOptionPane;
@@ -30,7 +30,7 @@ public class IfrTema extends javax.swing.JInternalFrame {
     }
     
     private void carregarDados() {
-        new ClienteDAO().popularTabela(tblTema, "");
+        new TemaGenericoDAO().popularTabela(tblTema, "");
     }
 
     /**
@@ -292,7 +292,7 @@ public class IfrTema extends javax.swing.JInternalFrame {
         cliente.setCpf(valueCpf);
         cliente.setTelefone(valueTelefone);
         
-        ClienteDAO clienteDAO = new ClienteDAO();
+        TemaGenericoDAO clienteDAO = new TemaGenericoDAO();
         
         if(idCliente == 0) {
             if(clienteDAO.salvar(cliente) == null) {
@@ -328,14 +328,14 @@ public class IfrTema extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        new ClienteDAO().popularTabela(tblTema, tfdSearch.getText());
+        new TemaGenericoDAO().popularTabela(tblTema, tfdSearch.getText());
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void buttonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEditarActionPerformed
         String idTabela = String.valueOf(tblTema.getValueAt(tblTema.getSelectedRow(), 0));
         
         idCliente = Integer.parseInt(idTabela);
-        TemaGenerico cliente = new ClienteDAO().consultarId(idCliente);
+        TemaGenerico cliente = new TemaGenericoDAO().consultarId(idCliente);
         
         if(cliente != null) {
             jTabbedPane1.setSelectedIndex(1);
@@ -355,7 +355,7 @@ public class IfrTema extends javax.swing.JInternalFrame {
         String idTabela = String.valueOf(tblTema.getValueAt(tblTema.getSelectedRow(), 0));
         
         idCliente = Integer.parseInt(idTabela);
-        String cliente = new ClienteDAO().excluir(idCliente);
+        String cliente = new TemaGenericoDAO().excluir(idCliente);
         
         if(cliente == null) {
             JOptionPane.showMessageDialog(this, "Registro excluido com sucesso");

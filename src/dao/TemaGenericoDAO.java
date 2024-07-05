@@ -18,7 +18,7 @@ import javax.swing.table.TableColumn;
  *
  * @author Elias
  */
-public class ClienteDAO implements IDAOT<TemaGenerico>{
+public class TemaGenericoDAO implements IDAOT<TemaGenerico>{
 
     @Override
     public String salvar(TemaGenerico o) {
