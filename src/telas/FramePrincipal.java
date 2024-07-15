@@ -38,7 +38,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Prova programação de aplicações - Elias Manica - 05/07/2024");
+        jLabel1.setText("Prova programação de aplicações - Elias Manica - 15/07/2024");
 
         jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 

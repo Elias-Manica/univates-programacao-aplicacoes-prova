@@ -101,7 +101,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Prova programa&#xe7;&#xe3;o de aplica&#xe7;&#xf5;es - Elias Manica - 05/07/2024"/>
+            <Property name="text" type="java.lang.String" value="Prova programa&#xe7;&#xe3;o de aplica&#xe7;&#xf5;es - Elias Manica - 15/07/2024"/>
           </Properties>
         </Component>
       </SubComponents>
