@@ -23,7 +23,7 @@ public class IfrGastos extends javax.swing.JInternalFrame {
     public IfrGastos() {
         initComponents();
         
-        //Formatacao.formatarCpf(tfdValor);
+        Formatacao.formatarData(tfdData);
         
         carregarDados();
     }
@@ -54,10 +54,10 @@ public class IfrGastos extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        tfdData = new javax.swing.JTextField();
         tfdDescricao = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         tfdValor = new javax.swing.JFormattedTextField();
+        tfdData = new javax.swing.JFormattedTextField();
         buttonEditar = new javax.swing.JButton();
         buttonExcluir = new javax.swing.JButton();
 
@@ -142,6 +142,12 @@ public class IfrGastos extends javax.swing.JInternalFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 tfdValorFocusLost(evt);
+            }
+        });
+
+        tfdData.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tfdDataFocusLost(evt);
             }
         });
 
@@ -310,7 +316,7 @@ public class IfrGastos extends javax.swing.JInternalFrame {
         if(gasto != null) {
             jTabbedPane1.setSelectedIndex(1);
             
-            tfdData.setText(gasto.getData());
+            tfdData.setText(Formatacao.formatarData(gasto.getData()));
             tfdDescricao.setText(gasto.getDescricao_gasto());
             tfdValor.setText(gasto.getValor().toString());
             
@@ -342,12 +348,16 @@ public class IfrGastos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tfdValorFocusGained
 
     private void tfdValorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfdValorFocusLost
-        //if(!Validacao.validarCPF(Formatacao.removerFormatacao(tfdValor.getText()))) {
-          //  tfdValor.setBackground(Color.red);
-        //} else {
-          //  tfdValor.setBackground(Color.WHITE);
-        //}
+        
     }//GEN-LAST:event_tfdValorFocusLost
+
+    private void tfdDataFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfdDataFocusLost
+       if(!Validacao.validarDataFormatada((tfdData.getText()))) {
+            tfdData.setBackground(Color.red);
+        } else {
+            tfdData.setBackground(Color.WHITE);
+        }
+    }//GEN-LAST:event_tfdDataFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -366,7 +376,7 @@ public class IfrGastos extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable tblTema;
-    private javax.swing.JTextField tfdData;
+    private javax.swing.JFormattedTextField tfdData;
     private javax.swing.JTextField tfdDescricao;
     private javax.swing.JTextField tfdSearch;
     private javax.swing.JFormattedTextField tfdValor;

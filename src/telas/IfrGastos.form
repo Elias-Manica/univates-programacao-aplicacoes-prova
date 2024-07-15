@@ -174,7 +174,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="tfdValor" max="32767" attributes="0"/>
                                   <Component id="tfdDescricao" alignment="1" pref="422" max="32767" attributes="0"/>
-                                  <Component id="tfdData" max="32767" attributes="0"/>
+                                  <Component id="tfdData" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -223,8 +223,6 @@
                 <Property name="text" type="java.lang.String" value="Valor:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfdData">
-            </Component>
             <Component class="javax.swing.JTextField" name="tfdDescricao">
             </Component>
             <Component class="javax.swing.JButton" name="jButton2">
@@ -239,6 +237,11 @@
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="tfdValorFocusGained"/>
                 <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="tfdValorFocusLost"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="tfdData">
+              <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="tfdDataFocusLost"/>
               </Events>
             </Component>
           </SubComponents>

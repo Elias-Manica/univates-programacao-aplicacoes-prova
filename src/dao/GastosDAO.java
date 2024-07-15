@@ -80,29 +80,7 @@ public class GastosDAO implements IDAOT<Gastos>{
 
     @Override
     public ArrayList<Gastos> consultarTodos() {
-        ArrayList<Gastos> clientes = new ArrayList();
-        
-        try {
-            Statement st = ConexaoBD.getInstance().getConnection().createStatement();
-            
-            String sql = "SELECT * FROM cliente;";
-            
-            System.err.println("Sql: " + sql);
-            
-            ResultSet retorno = st.executeQuery(sql);
-            
-            while(retorno.next()) {
-                Gastos cliente = new Gastos();
-                
-                cliente.setId(retorno.getInt("id"));
-                
-                clientes.add(cliente);
-            }
-        } catch(Exception e) {
-            System.out.println("Erro ao consultar os clientes" + e);
-        } 
-        
-        return clientes;
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
