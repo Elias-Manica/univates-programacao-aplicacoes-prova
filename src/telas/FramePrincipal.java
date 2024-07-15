@@ -61,7 +61,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Cadastros");
 
-        jMenuItem3.setText("Tema");
+        jMenuItem3.setText("Gastos");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -108,7 +108,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        IfrTema ifrCliente = new IfrTema();
+        IfrGastos ifrCliente = new IfrGastos();
         jDesktopPane1.add(ifrCliente);
 
         ifrCliente.setVisible(true);
